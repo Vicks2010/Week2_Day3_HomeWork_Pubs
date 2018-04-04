@@ -8,6 +8,7 @@ require_relative("../drink.rb")
 class PubTest < MiniTest::Test
   def setup()
     @customer = Customer.new("Victor", 25, [], 36)
+    @customer1 = Customer.new("John", 25, [], 16)
     @drink1 = Drink.new("Beer", 4)
     @drink2 = Drink.new("Wine", 5)
     @drink3 = Drink.new("Cider", 3)
@@ -48,6 +49,10 @@ class PubTest < MiniTest::Test
 def test_customer_age()
   @pub.sell_drink_to_customer(@customer, @drink1)
   assert_equal(36, @customer.age_check)
-
 end
+def test_customer_age__underage
+  @pub.sell_drink_to_customer(@customer1, @drink1)
+  assert_equal(16, @customer1.age_check)
+end
+
 end
