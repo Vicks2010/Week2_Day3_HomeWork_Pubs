@@ -9,8 +9,15 @@ def setup()
 
 end
 
-def test_get_oub_name()
-  assert_equal("CodersArms", @pub.name) 
+def test_get_pub_name()
+  assert_equal("CodersArms", @pub.name)
+end
+def test_amount_in_till()
+  assert_equal(100, @pub.till)
+end
+def test_collection_of_drinks
+  assert_equal([], @pub.drinks)
 
 end
+
 end
