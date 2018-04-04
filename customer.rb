@@ -8,6 +8,7 @@ class Customer
   end
 def buy_drink(pub, drink)
 @drinks.push(drink)
+@wallet -= drink.price
 end
 def drink_count()
   return @drinks.count()

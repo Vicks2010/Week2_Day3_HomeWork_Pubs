@@ -30,4 +30,8 @@ end
    @customer.buy_drink(@pub, @drink1)
    assert_equal(1, @customer.drink_count)
  end
+ def test_customer_wallet_amount_has_reduced
+   @customer.buy_drink(@pub, @drink1)
+   assert_equal(21, @customer.wallet)
+ end
 end
